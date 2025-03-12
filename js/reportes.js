@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const estudiantes = JSON.parse(localStorage.getItem("estudiantes")) || [];
         const cursos = JSON.parse(localStorage.getItem("cursos")) || [];
 
-        // Poblar grados y secciones
         const grados = [...new Set(notas.map(nota => nota.grado))];
         const secciones = [...new Set(notas.map(nota => nota.seccion))];
 
@@ -25,16 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
         filtroSeccion.innerHTML = "<option value=''>Todos</option>";
         grados.forEach(grado => filtroGrado.innerHTML += `<option value="${grado}">${grado}</option>`);
         secciones.forEach(seccion => filtroSeccion.innerHTML += `<option value="${seccion}">${seccion}</option>`);
-
-        // Poblar profesores
         filtroProfesor.innerHTML = "<option value=''>Todos</option>";
         profesores.forEach(prof => filtroProfesor.innerHTML += `<option value="${prof.nombre}">${prof.nombre}</option>`);
-
-        // Poblar estudiantes
         filtroEstudiante.innerHTML = "<option value=''>Todos</option>";
         estudiantes.forEach(est => filtroEstudiante.innerHTML += `<option value="${est.id}">${est.nombre} (ID: ${est.id})</option>`);
-
-        // Poblar cursos
         filtroCurso.innerHTML = "<option value=''>Todos</option>";
         cursos.forEach(curso => filtroCurso.innerHTML += `<option value="${curso.nombreCurso}">${curso.nombreCurso}</option>`);
     }

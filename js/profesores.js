@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.getElementById("nombre").value = profesor.nombre;
         document.getElementById("nivel").value = profesor.nivel;
-        formulario.dataset.index = index; // Guardar índice para edición
+        formulario.dataset.index = index;
     };
 
     window.eliminarProfesor = function (index) {
