@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Notas</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Notas</h1>
+        <nav>
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="estudiantes.html">Estudiantes</a></li>
+                <li><a href="profesores.html">Profesores</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+                <li><a href="logout.html">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Registro de Notas</h2>
+        <form id="formNota">
+            <label for="grado">Grado:</label>
+            <select id="grado" required>
+                <option value="">Seleccione un grado</option>
+                <option value="Primero">Primero</option>
+                <option value="Segundo">Segundo</option>
+                <option value="Tercero">Tercero</option>
+                <option value="Cuarto">Cuarto</option>
+                <option value="Quinto">Quinto</option>
+                <option value="Sexto">Sexto</option>
+            </select>
+
+            <label for="seccion">Sección:</label>
+            <select id="seccion" required>
+                <option value="">Seleccione una sección</option>
+                <option value="A-1">A-1</option>
+                <option value="A-2">A-2</option>
+                <option value="B-1">B-1</option>
+                <option value="B-2">B-2</option>
+            </select>
+
+            <label for="materia">Materia:</label>
+            <select id="materia" required>
+                <option value="">Seleccione una materia</option>
+            </select>
+
+            <label for="estudiante">Estudiante:</label>
+            <select id="estudiante" required>
+                <option value="">Seleccione un estudiante</option>
+            </select>
+
+            <label for="nota">Nota:</label>
+            <input type="number" id="nota" min="0" max="100" required>
+
+            <button type="submit">Registrar Nota</button>
+        </form>
+
+        <h2>Filtrar Notas</h2>
+
+        <label for="filtroGrado">Seleccionar Grado:</label>
+        <select id="filtroGrado">
+            <option value="">Todos los grados</option>
+            <option value="Primero">Primero</option>
+            <option value="Segundo">Segundo</option>
+            <option value="Tercero">Tercero</option>
+            <option value="Cuarto">Cuarto</option>
+            <option value="Quinto">Quinto</option>
+            <option value="Sexto">Sexto</option>
+        </select>
+        
+        <label for="filtroSeccion">Seleccionar Sección:</label>
+        <select id="filtroSeccion">
+            <option value="">Todas las secciones</option>
+            <option value="A-1">A-1</option>
+            <option value="A-2">A-2</option>
+            <option value="B-1">B-1</option>
+            <option value="B-2">B-2</option>
+        </select>
+        
+        <label for="filtroEstudiante">Buscar por Nombre o ID:</label>
+        <input type="text" id="filtroEstudiante" placeholder="Ingrese nombre o ID">
+        
+        <button id="btnFiltrar">Filtrar</button>
+
+        <h2>Lista de Notas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Estudiante</th>
+                    <th>Grado</th>
+                    <th>Sección</th>
+                    <th>Materia</th>
+                    <th>Profesor</th>
+                    <th>Nota</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="listaNotas"></tbody>
+        </table>
+    </div>
+    <footer>
+        <p>&copy; 2025 Sistema de Gestión Académica</p>
+    </footer>
+    <script src="js/notas.js"></script>
+</body>
+</html>

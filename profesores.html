@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Profesores</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Profesores</h1>
+        <nav>
+            <ul>
+                <li><a href="estudiantes.html">Estudiantes</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="notas.html">Notas</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+                <li><a href="logout.html" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Registro de Profesores</h2>
+            <form id="registroProfesor">
+                <label for="nombre">Nombre Completo del Profesor:</label>
+                <input type="text" id="nombre" required>
+                
+                <label for="nivel">Nivel Asignado:</label>
+                <select id="nivel">
+                    <option value="">Seleccione un nivel</option>
+                    <option value="Primero">Primero</option>
+                    <option value="Segundo">Segundo</option>
+                    <option value="Tercero">Tercero</option>
+                    <option value="Cuarto">Cuarto</option>
+                    <option value="Quinto">Quinto</option>
+                    <option value="Sexto">Sexto</option>
+                </select>
+                
+                <button type="submit">Registrar Profesor</button>
+            </form>
+            
+            <h3>Lista de Profesores</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre Completo</th>
+                        <th>Nivel Asignado</th>
+                        <th>ID</th>
+                        <th>Contraseña</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="listaProfesores">
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sistema de Gestión Académica</p>
+    </footer>
+    <script src="js/profesores.js"></script>
+    <script>
+        function cerrarSesion() {
+            localStorage.removeItem("usuarioActual");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

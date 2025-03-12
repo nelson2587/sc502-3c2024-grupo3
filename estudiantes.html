@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Estudiantes</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Estudiantes</h1>
+        <nav>
+            <ul>
+                <li><a href="profesores.html">Profesores</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="notas.html">Notas</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+                <li><a href="logout.html" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Registro de Estudiantes</h2>
+        <form id="formEstudiante">
+            <label for="nombre">Nombre Completo del Estudiante:</label>
+            <input type="text" id="nombre" required>
+
+            <label for="grado">Grado:</label>
+            <select id="grado" required>
+                <option value="">Seleccione un grado</option>
+                <option value="Primero">Primero</option>
+                <option value="Segundo">Segundo</option>
+                <option value="Tercero">Tercero</option>
+                <option value="Cuarto">Cuarto</option>
+                <option value="Quinto">Quinto</option>
+                <option value="Sexto">Sexto</option>
+            </select>
+
+            <label for="seccion">Sección:</label>
+            <select id="seccion" required>
+                <option value="">Seleccione una sección</option>
+                <option value="A-1">A-1</option>
+                <option value="A-2">A-2</option>
+                <option value="B-1">B-1</option>
+                <option value="B-2">B-2</option>
+            </select>
+
+            <button type="submit">Registrar Estudiante</button>
+        </form>
+        
+        <h2>Filtrar Estudiantes</h2>
+        <label for="filtroEstudiante">Buscar por Nombre o ID:</label>
+        <input type="text" id="filtroEstudiante" placeholder="Ingrese nombre o ID">
+
+        <label for="filtroGrado">Seleccionar Grado:</label>
+        <select id="filtroGrado">
+            <option value="">Todos los grados</option>
+        </select>
+
+        <label for="filtroSeccion">Seleccionar Sección:</label>
+        <select id="filtroSeccion">
+            <option value="">Todas las secciones</option>
+        </select>
+
+        <button id="btnFiltrar">Filtrar</button>
+
+        <h2>Lista de Estudiantes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre Completo</th>
+                    <th>Grado</th>
+                    <th>Sección</th>
+                    <th>ID</th>
+                    <th>Contraseña</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="listaEstudiantes"></tbody>
+        </table>
+    </div>
+    <footer>
+        <p>&copy; 2025 Sistema de Gestión Académica</p>
+    </footer>
+    
+    <script src="js/estudiantes.js"></script>
+</body>
+</html>

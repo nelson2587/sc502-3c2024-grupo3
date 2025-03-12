@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Reportes</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Reportes</h1>
+        <nav>
+            <ul>
+                <li><a href="estudiantes.html">Estudiantes</a></li>
+                <li><a href="profesores.html">Profesores</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="notas.html">Notas</a></li>
+                <li><a href="logout.html" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Generación de Reportes</h2>
+            <form id="filtroReportes">
+                <label for="filtroGrado">Grado:</label>
+                <select id="filtroGrado"></select>
+
+                <label for="filtroSeccion">Sección:</label>
+                <select id="filtroSeccion"></select>
+
+                <label for="filtroProfesor">Profesor:</label>
+                <select id="filtroProfesor"></select>
+
+                <label for="filtroEstudiante">Estudiante:</label>
+                <select id="filtroEstudiante"></select>
+
+                <label for="filtroCurso">Curso:</label>
+                <select id="filtroCurso"></select>
+
+                <button type="button" id="btnGenerarReporte">Generar Reporte</button>
+            </form>
+
+            <h3>Resultados del Reporte</h3>
+            <div id="resultadoReporte"></div>
+
+            <button id="exportarPDF">Exportar a PDF</button>
+            <button id="exportarExcel">Exportar a Excel</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sistema de Gestión Académica</p>
+    </footer>
+    <script src="js/reportes.js"></script>
+    <script>
+        function cerrarSesion() {
+            localStorage.removeItem("usuarioActual");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

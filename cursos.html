@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Cursos</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Cursos</h1>
+        <nav>
+            <ul>
+                <li><a href="estudiantes.html">Estudiantes</a></li>
+                <li><a href="profesores.html">Profesores</a></li>
+                <li><a href="notas.html">Notas</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+                <li><a href="logout.html" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Registro de Cursos</h2>
+            <form id="registroCurso">
+                <label for="nombreCurso">Nombre del Curso:</label>
+                <input type="text" id="nombreCurso" required>
+                
+                <label for="codigoCurso">Código del Curso:</label>
+                <input type="text" id="codigoCurso" required>
+                
+                <button type="submit">Registrar Curso</button>
+            </form>
+            
+            <h3>Lista de Cursos</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre del Curso</th>
+                        <th>Código</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="listaCursos">
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sistema de Gestión Académica</p>
+    </footer>
+    <script src="js/cursos.js"></script>
+    <script>
+        function cerrarSesion() {
+            localStorage.removeItem("usuarioActual");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>
