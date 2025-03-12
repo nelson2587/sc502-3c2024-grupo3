@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
         estudiantes.splice(index, 1);
         localStorage.setItem("estudiantes", JSON.stringify(estudiantes));
         cargarEstudiantes();
-    };
+    }; 
 
     btnFiltrar.addEventListener("click", cargarEstudiantes);
     filtroGrado.addEventListener("change", cargarEstudiantes);

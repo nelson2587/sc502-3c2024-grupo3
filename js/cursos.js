@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let cursos = JSON.parse(localStorage.getItem("cursos")) || [];
         const index = formulario.dataset.index;
 
-        if (index) {
+        if (index) { 
             cursos[index] = { nombreCurso, codigoCurso };
             delete formulario.dataset.index;
         } else {
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("cursos", JSON.stringify(cursos));
         formulario.reset();
         actualizarLista();
-    });
+    }); 
 
     function actualizarLista() {
         listaCursos.innerHTML = "";
