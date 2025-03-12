@@ -20,15 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
     function cargarOpciones() {
         const grados = ["Primero", "Segundo", "Tercero", "Cuarto", "Quinto", "Sexto"];
         const secciones = ["A-1", "A-2", "B-1", "B-2"];
-    
-        // Limpiar opciones previas antes de agregar nuevas
         gradoSelect.innerHTML = "<option value=''>Seleccione un grado</option>";
         filtroGrado.innerHTML = "<option value=''>Todos los grados</option>";
         
         seccionSelect.innerHTML = "<option value=''>Seleccione una sección</option>";
         filtroSeccion.innerHTML = "<option value=''>Todas las secciones</option>";
     
-        // Agregar grados
         grados.forEach(grado => {
             let option1 = new Option(grado, grado);
             let option2 = new Option(grado, grado);
@@ -36,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
             filtroGrado.appendChild(option2);
         });
     
-        // Agregar secciones
         secciones.forEach(seccion => {
             let option1 = new Option(seccion, seccion);
             let option2 = new Option(seccion, seccion);

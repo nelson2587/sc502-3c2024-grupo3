@@ -12,16 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
         let usuarioValido = null;
 
         if (rol === "admin") {
-            // Validar administrador
+
             if (usuarioID === "admin" && password === "admin123") {
                 usuarioValido = { id: "admin", rol: "admin" };
             }
         } else if (rol === "profesor") {
-            // Validar profesor
             const profesores = JSON.parse(localStorage.getItem("profesores")) || [];
             usuarioValido = profesores.find(profesor => profesor.id === usuarioID && profesor.contraseña === password);
         } else if (rol === "estudiante") {
-            // Validar estudiante
             const estudiantes = JSON.parse(localStorage.getItem("estudiantes")) || [];
             usuarioValido = estudiantes.find(estudiante => estudiante.id === usuarioID && estudiante.contraseña === password);
         }
@@ -31,11 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Inicio de sesión exitoso");
 
             if (rol === "admin") {
-                window.location.href = "inicio.html"; // Redirige a la vista del administrador
+                window.location.href = "inicio.html";
             } else if (rol === "profesor") {
-                window.location.href = "notas.html"; // Redirige a la gestión de notas
+                window.location.href = "notas.html";
             } else if (rol === "estudiante") {
-                window.location.href = "reportes.html"; // Redirige a la consulta de notas
+                window.location.href = "reportes.html"; 
             }
         } else {
             mensajeError.textContent = "ID, contraseña o rol incorrectos.";

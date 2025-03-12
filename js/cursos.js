@@ -20,11 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const index = formulario.dataset.index;
 
         if (index) {
-            // Editar curso existente
             cursos[index] = { nombreCurso, codigoCurso };
             delete formulario.dataset.index;
         } else {
-            // Agregar nuevo curso
             cursos.push({ nombreCurso, codigoCurso });
         }
 
@@ -56,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.getElementById("nombreCurso").value = curso.nombreCurso;
         document.getElementById("codigoCurso").value = curso.codigoCurso;
-        formulario.dataset.index = index; // Guardar índice para la edición
+        formulario.dataset.index = index;
     };
 
     window.eliminarCurso = function (index) {
