@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function cargarNotas() {
         listaNotas.innerHTML = "";
         let notas = JSON.parse(localStorage.getItem("notas")) || [];
-        actualizarProfesoresEnNotas(); 
+        actualizarProfesoresEnNotas(); // 🔹 Se asegura de que el profesor esté bien asignado
 
         const gradoSeleccionado = filtroGrado.value;
         const seccionSeleccionada = filtroSeccion.value;

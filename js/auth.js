@@ -1,9 +1,12 @@
+// auth.js - Gestión de autenticación y roles
+
 document.addEventListener("DOMContentLoaded", function () {
     const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
     if (!usuarioActual) {
-        window.location.href = "index.html";
+        window.location.href = "index.html"; // Redirigir si no está logueado
     }
 
+    // Definir accesos según rol
     const accesos = {
         "admin": ["inicio.html", "cursos.html", "estudiantes.html", "profesores.html", "notas.html", "reportes.html"],
         "profesor": ["notas.html", "reportes.html", "estudiantes.html"],

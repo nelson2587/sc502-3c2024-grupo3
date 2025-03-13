@@ -19,17 +19,19 @@ document.addEventListener("DOMContentLoaded", () => {
         let cursos = JSON.parse(localStorage.getItem("cursos")) || [];
         const index = formulario.dataset.index;
 
-        if (index) { 
+        if (index) {
+            // Editar curso existente
             cursos[index] = { nombreCurso, codigoCurso };
             delete formulario.dataset.index;
         } else {
+            // Agregar nuevo curso
             cursos.push({ nombreCurso, codigoCurso });
         }
 
         localStorage.setItem("cursos", JSON.stringify(cursos));
         formulario.reset();
         actualizarLista();
-    }); 
+    });
 
     function actualizarLista() {
         listaCursos.innerHTML = "";
@@ -54,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.getElementById("nombreCurso").value = curso.nombreCurso;
         document.getElementById("codigoCurso").value = curso.codigoCurso;
-        formulario.dataset.index = index;
+        formulario.dataset.index = index; // Guardar índice para la edición
     };
 
     window.eliminarCurso = function (index) {
