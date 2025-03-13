@@ -1,0 +1,7 @@
+Informacion de log in:
+
+usuario: "admin", password: "admin123", rol: "admin"
+
+usuario: "profesor1", password: "profesor123", rol: "profesor"
+
+usuario: "estudiante1", password: "estudiante123", rol: "estudiante"
